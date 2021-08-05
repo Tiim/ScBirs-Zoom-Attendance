@@ -75,6 +75,11 @@ def print_stats(obj):
   lessons = len(obj)
   total_students = sum([len(o['attendance']) for o in obj])
 
+  latest_lesson = obj[-1]
+
+  print(f'Last Lesson: { latest_lesson["start"] } ')
+  print('Present: \n*', "\n* ".join(latest_lesson["attendance"]))
+  print('')
   print(f'Total:\n{lessons} Lektionen')
   print(f'{total_students} Teilnemer')
   print(f'{total_students/lessons:0.2f} Teilnemer pro Lektion')
